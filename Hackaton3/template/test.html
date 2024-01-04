@@ -1,0 +1,86 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Mov(e)ster</title>
+  <link rel="stylesheet" href="./styles/main.css">
+  <link rel="preconnect" href="https://fonts.gstatic.com">
+  <link href="https://fonts.googleapis.com/css2?family=Roboto:wght@300&display=swap" rel="stylesheet">
+</head>
+<body>
+  <div id="app">
+    <header></header>
+    <nav>
+      <a href="#" class="nav-link" data-page="home">Home</a> | 
+      <a href="#" class="nav-link" data-page="categories">Categories</a> |
+      <a href="#" class="nav-link" data-page="favorites">Favorites</a>
+      <input id="search" type="text" placeholder="Search">
+      <a href="#" class="nav-link" data-page="about">About</a>
+    </nav>
+    <div id="container">
+      <!-- start placeholders -->
+     
+      <!-- end placeholders -->
+    </div>
+    <footer>Footer</footer>
+  </div>
+
+  <!-- app -->
+  <script >
+
+
+import {movies, categories} from './src/data/movies-data.js'
+
+const q = (selector) => document.querySelector(selector);
+
+document.addEventListener('DOMContentLoaded', () => {
+// search events
+  q('input#search').addEventListener('input', event => {
+    renderSearchItems(event.target.value);
+  });
+})
+
+  const renderSearchItems = (searchTerm) => {
+  // missing implementation
+
+   if(searchMovies(searchTerm)){
+    return toSearchView(searchTerm)
+   }
+};
+
+  const searchMovies = (title = '') => title
+  ? movies.filter(m => m.title.toLowerCase().includes(title.toLowerCase()))
+  : movies;
+export const toSearchView = (movies, searchTerm) => `
+<div id="movies">
+  <h1>Movies found for "${searchTerm}":</h1>
+  <div class="content">
+    ${movies.map(toMovieSimple).join('\n') || '<p>Add some movies to favorites to see them here.</p>'}
+  </div>
+</div>
+`;
+
+const toMovieSimple = (movie) => `
+<!-- your template here -->
+<div>
+<h2>${movie.title}</h2>
+</div> 
+
+<div id="category">
+  <h1>${category.name} movies:</h1>
+  <div class="content">
+  ${movie.title}
+  </div>
+</div>
+`;
+
+
+  </script>
+  <!-- end app -->
+</body>
+</html>
+
+
+
+
