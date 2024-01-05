@@ -11,10 +11,20 @@ export const toMoviesFromCategoryView = (category, movies) => `
 
 export const toSingleMovieView = (movie) => `
 <!-- your template here, you can use toMovieDetailed(movie) -->
-<div id="category">
-  <h2>${category.name} movies:</h2>
-  <div class="content">
-  ${movie.title}
+<div class="moviw">
+  <h2>${movie.title}</h2>
+  <div>
+    <div> <img src="${movie.poster}" alt="${movie.title} cover photo" width="40" height="60"> 
+    </div>
+  
+    </div> 
+    <p> Genre: ${movie.genre}</p>
+    <p> director: ${movie.director}</p>
+    <p> stars: ${movie.stars}</p>
+    <p> description: ${movie.description}</p>
+    <div>
+  
+  
   </div>
 </div>
 `;
@@ -26,7 +36,8 @@ export const toMovieSimple = (movie) => `
 <p>${movie.year}</p>
 <img src="${movie.poster}" alt="${movie.title} cover photo" width="40" height="60"> 
 <br>
-<button id="button-view-category">view details</button> 
+<button  class="button-view-details">view details</button> 
+<button  id="${movie.id}" class= 'favourites-btn' >add fav</button> 
 </div> 
 `;
 
