@@ -38,6 +38,7 @@ export const toMovieSimple = (movie) => `
 <br>
 <button  class="button-view-details">view details</button> 
 <button  id="${movie.id}" class= 'favourites-btn' >add fav</button> 
+<span class = 'view-fav' id="${movie.id}"> movieview </span>
 </div> 
 `;
 
