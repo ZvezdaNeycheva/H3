@@ -11,6 +11,7 @@ const toSingleCategoryView = (category) => `
 <div class="category-single">
 <h2>${category.name}</h2>
   <p> ${category.moviesCount}</p>
-  <button  class= 'btnn' id="button-view-category">view category</button> 
+  <button  class= 'btnn' id="${category.id}">view category</button> 
+  
 </div>  
 `;
