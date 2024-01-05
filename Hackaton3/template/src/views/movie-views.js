@@ -44,5 +44,9 @@ export const toMovieSimple = (movie) => `
 
 
 const toMovieDetailed = (movie) => `
-<!-- your template here -->
+<div>
+<h2>${movie.title}</h2>
+<p>${movie.year}</p>
+<img src="${movie.poster}" alt="${movie.title} cover photo" width="40" height="60"> 
+</div>
 `;
