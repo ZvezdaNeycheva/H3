@@ -8,7 +8,7 @@ import {toCategoriesView} from '../views/category-view.js'
 import {toAboutView} from '../views/about-view.js'
 import {toFavoritesView} from '../views/favorites-view.js'
 import {getFavorites} from '../data/favorites.js'
-import {getCategory} from '../data/movies.js'
+import {getCategory, getMovieById} from '../data/movies.js'
 import {toggleFavoriteStatus, renderFavoriteStatus} from './favorites-events.js'
 
 
