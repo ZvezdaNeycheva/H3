@@ -40,7 +40,7 @@ export const loadPage = (page = '') => {
 };
 
 export const renderMovieDetails = (id = null) => {
-  const info = loadMovies(id);
+  const info = getMovieById(id);
   q(CONTAINER_SELECTOR).innerHTML = toMovieSimple(info);
 };
 
