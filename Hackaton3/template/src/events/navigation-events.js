@@ -41,7 +41,8 @@ export const loadPage = (page = '') => {
 
 export const renderMovieDetails = (id = null) => {
   const info = getMovieById(id);
-  q(CONTAINER_SELECTOR).innerHTML = toMovieSimple(info);
+  // q(CONTAINER_SELECTOR).innerHTML = toMovieSimple(info);
+  q(CONTAINER_SELECTOR).innerHTML = toMovieDetailed(info);
 };
 
 export const renderCategory = (categoryId = null) => {
