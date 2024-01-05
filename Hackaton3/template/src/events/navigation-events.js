@@ -44,17 +44,6 @@ export const renderMovieDetails = (id = null) => {
   q(CONTAINER_SELECTOR).innerHTML = toMovieSimple(info);
 };
 
-// export const renderCategory = (categoryId = null) => {
-//   // missing partial implementation
-// //-----------------------
-// //if category id == categoryId display only that category
-// // loadCategory
-// q(CONTAINER_SELECTOR).innerHTML = loadCategory(categoryId)// returns 'Action' or 'Comedy' or ...
-// // to render smth:
-
-
-
-// };
 export const renderCategory = (categoryId = null) => {
   const category = getCategory(categoryId);
   const movies = loadMovies(categoryId)
