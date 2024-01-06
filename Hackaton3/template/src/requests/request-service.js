@@ -1,4 +1,5 @@
 import { getCategories, getMoviesGeneralInfo, getMovieById, getCategory, searchMovies } from '../data/movies.js';
+import { toSingleMovieView } from '../views/movie-views.js';
 
 export const loadCategories = () => {
   // missing implementation
@@ -21,7 +22,7 @@ export const loadMovies = (categoryId = null) => {
 
 export const loadSingleMovie = (id) => {
   // missing implementation
-  const movie = getMoviesGeneralInfo(getMovieById(id))
+  const movie = toSingleMovieView(getMovieById(id))
   return movie
 };
 
