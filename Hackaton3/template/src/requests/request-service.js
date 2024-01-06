@@ -21,7 +21,7 @@ export const loadMovies = (categoryId = null) => {
 
 export const loadSingleMovie = (id) => {
   // missing implementation
-  const movie = getMovieById(id)
+  const movie = getMoviesGeneralInfo(getMovieById(id))
   return movie
 };
 
