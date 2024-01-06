@@ -1,7 +1,7 @@
 import { CATEGORIES, CONTAINER_SELECTOR, HOME , FAVORITES, ABOUT} from '../common/constants.js';
 import { loadCategories, loadCategory, loadMovies, loadSingleMovie, loadSearchMovies } from '../requests/request-service.js';
 import { toHomeView } from '../views/home-view.js';
-import { toMoviesFromCategoryView } from '../views/movie-views.js';
+import { toMoviesFromCategoryView, toSingleMovieView } from '../views/movie-views.js';
 import { q, setActiveNav } from './helpers.js';
 
 import {toCategoriesView} from '../views/category-view.js'
@@ -41,7 +41,7 @@ export const loadPage = (page = '') => {
 
 export const renderMovieDetails = (id = null) => {
   const info = getMovieById(id);
-  q(CONTAINER_SELECTOR).innerHTML = toSingleMovieView(info);
+  q(CONTAINER_SELECTOR).innerHTML = loadSingleMovie(getMovieById(id));
 };
 
 export const renderCategory = (categoryId = null) => {
@@ -57,21 +57,15 @@ const renderHome = () => {
 };
 
 const renderCategories = () => {
-  // missing implementation
   q(CONTAINER_SELECTOR).innerHTML = toCategoriesView(loadCategories())
 };
 
 const renderFavorites = () => {
-  // missing implementation
-  
   if (getFavorites()) {
-    q(CONTAINER_SELECTOR).innerHTML = toFavoritesView(a)
+    q(CONTAINER_SELECTOR).innerHTML = toFavoritesView(getFavorites())
   }
-  
-  // q(CONTAINER_SELECTOR).innerHTML = toFavoritesView()
 };
 
 const renderAbout = () => {
-  // missing implementation
   q(CONTAINER_SELECTOR).innerHTML = toAboutView()
 };
