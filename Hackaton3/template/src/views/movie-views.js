@@ -23,11 +23,8 @@ export const toSingleMovieView = (movie) => `
     <p> director: ${movie.director}</p>
     <p> stars: ${movie.stars}</p>
     <p> description: ${movie.description}</p>
+    
     <span class = 'view-fav' id="${movie.id}"> ${renderFavoriteStatus()} </span>
-    <div>
-  
-  
-  </div>
 </div>
 `;
 
