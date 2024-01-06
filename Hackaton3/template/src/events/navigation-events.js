@@ -40,8 +40,11 @@ export const loadPage = (page = '') => {
 };
 
 export const renderMovieDetails = (id = null) => {
-  const info = getMovieById(id);
-  q(CONTAINER_SELECTOR).innerHTML = loadSingleMovie(getMovieById(id));
+  // const info = getMovieById(id);
+  // q(CONTAINER_SELECTOR).innerHTML = loadSingleMovie(getMovieById(info));
+
+  const movie = loadSingleMovie(id);
+  q(CONTAINER_SELECTOR).innerHTML = toSingleMovieView(movie);
 };
 
 export const renderCategory = (categoryId = null) => {
@@ -61,9 +64,14 @@ const renderCategories = () => {
 };
 
 const renderFavorites = () => {
+  // missing implementation
+const favs = getFavorites()
+const favMovies = favs.map(fav => loadSingleMovie(fav))
+
   if (getFavorites()) {
-    q(CONTAINER_SELECTOR).innerHTML = toFavoritesView(getFavorites())
+    q(CONTAINER_SELECTOR).innerHTML = toFavoritesView(favMovies)
   }
+  
 };
 
 const renderAbout = () => {

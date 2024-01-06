@@ -23,10 +23,17 @@ export const toSingleMovieView = (movie) => `
     <p> director: ${movie.director}</p>
     <p> stars: ${movie.stars}</p>
     <p> description: ${movie.description}</p>
-    
-    <span class = 'view-fav' id="${movie.id}"> ${renderFavoriteStatus()} </span>
+
+    <span class="favorite" data-movie-id="${movieId}">${renderFavoriteStatus()}</span>
+    <div>
+  
+  
+  </div>
 </div>
 `;
+    // <span class = 'view-fav' id="${movie.id}"> ${renderFavoriteStatus()} </span>
+    // <span class="favorite" data-movie-id="${movieId}">${renderFavoriteStatus()}</span>
+
 
 export const toMovieSimple = (movie) => `
 <!-- your template here -->
@@ -37,9 +44,11 @@ export const toMovieSimple = (movie) => `
 <br>
 <button  class="button-view-details" attr-view-details='${movies.id}'>view details</button> 
 
-<span class = 'view-fav' id="${movie.id}"> ${renderFavoriteStatus()} </span>
+<span class="favorite" data-movie-id="${movieId}">${renderFavoriteStatus()}</span>
 </div> 
 `;
+// <span class = 'view-fav' id="${movie.id}"> ${renderFavoriteStatus()} </span>
+// <span class="favorite" data-movie-id="${movieId}">${renderFavoriteStatus()}</span>
 
 
 const toMovieDetailed = (movie) => `

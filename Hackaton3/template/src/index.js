@@ -26,12 +26,12 @@ document.addEventListener('DOMContentLoaded', () => {
     }
 
     // toggle favorite event
-    if (event.target.classList.contains('view-fav')) {
-      toggleFavoriteStatus(+event.target.getAttribute('id')); 
-    }
-    // if (event.target.classList.contains('favorite')) {
-    //   toggleFavoriteStatus(+event.target.getAttribute('data-movie-id')); 
+    // if (event.target.classList.contains('view-fav')) {
+    //   toggleFavoriteStatus(+event.target.getAttribute('id')); 
     // }
+    if (event.target.classList.contains('favorite')) {
+      toggleFavoriteStatus(+event.target.getAttribute('data-movie-id')); 
+    }
   })
 
   // search events
