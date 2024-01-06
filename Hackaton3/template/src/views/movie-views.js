@@ -1,3 +1,4 @@
+import { movies } from '../data/movies-data.js';
 import { renderFavoriteStatus } from '../events/favorites-events.js';
 
 export const toMoviesFromCategoryView = (category, movies) => `
@@ -11,7 +12,7 @@ export const toMoviesFromCategoryView = (category, movies) => `
 
 export const toSingleMovieView = (movie) => `
 <!-- your template here, you can use toMovieDetailed(movie) -->
-<div class="moviw">
+<div>
   <h2>${movie.title}</h2>
   <div>
     <div> <img src="${movie.poster}" alt="${movie.title} cover photo" width="40" height="60"> 
@@ -22,6 +23,7 @@ export const toSingleMovieView = (movie) => `
     <p> director: ${movie.director}</p>
     <p> stars: ${movie.stars}</p>
     <p> description: ${movie.description}</p>
+    <span class = 'view-fav' id="${movie.id}"> ${renderFavoriteStatus()} </span>
     <div>
   
   
@@ -36,9 +38,9 @@ export const toMovieSimple = (movie) => `
 <p>${movie.year}</p>
 <img src="${movie.poster}" alt="${movie.title} cover photo" width="40" height="60"> 
 <br>
-<button  class="button-view-details">view details</button> 
-<button  id="${movie.id}" class= 'favourites-btn' >add fav</button> 
-<span class = 'view-fav' id="${movie.id}"> movieview </span>
+<button  class="button-view-details" attr-view-details='${movies.id}'>view details</button> 
+
+<span class = 'view-fav' id="${movie.id}"> ${renderFavoriteStatus()} </span>
 </div> 
 `;
 
