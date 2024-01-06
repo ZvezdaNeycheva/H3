@@ -21,15 +21,17 @@ document.addEventListener('DOMContentLoaded', () => {
     }
 
     // show movie events
-    if (event.target.classList.contains(/* your button class here */)) {
-      renderMovieDetails(+event.target.getAttribute(/* your correct data attribute here */));
+    if (event.target.classList.contains('button-view-details')) {
+      renderMovieDetails(+event.target.getAttribute('attr-view-details'));
     }
 
     // toggle favorite event
-    if (event.target.classList.contains(/* favorites item class here */)) {
-      toggleFavoriteStatus(+event.target.getAttribute(/* your correct data attribute here */));
+    if (event.target.classList.contains('view-fav')) {
+      toggleFavoriteStatus(+event.target.getAttribute('id')); 
     }
-
+    // if (event.target.classList.contains('favorite')) {
+    //   toggleFavoriteStatus(+event.target.getAttribute('data-movie-id')); 
+    // }
   })
 
   // search events
